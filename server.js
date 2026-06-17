@@ -1,12 +1,12 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
-
-app.get('/', (req, res) => {
-  res.send('<h1>Hola Sandra, tu servidor Express funciona 🚀</h1>');
-});
-
 const PORT = 3000;
 
+// servir carpeta public
+app.use(express.static('public'));
+
 app.listen(PORT, () => {
-  console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+  console.log(`Servidor en http://localhost:${PORT}`);
 });
